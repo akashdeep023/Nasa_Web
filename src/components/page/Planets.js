@@ -6,10 +6,10 @@ import { GoArrowLeft } from "react-icons/go";
 const Planets = () => {
 	return (
 		<div className="h-full min-w-screen text-white relative py-4 sm:py-5 md:py-6 px-6 sm:px-9 md:px-12">
-			<h2 className="font-bold text-2xl text-center sm:text-3xl md:text-4xl w-full text-white p-4 ps-6">
+			<h2 className="font-bold text-2xl text-center sm:text-3xl md:text-4xl w-full text-white mb-2 sm:mb-3 md:mb-4 p-4 ps-6">
 				Planets
 			</h2>
-			<div className="text-white z-10 relative py-12 w-full h-full">
+			<div className="text-white z-10 relative w-full h-full">
 				<div className="flex justify-center items-center">
 					<CardGrid />
 				</div>
