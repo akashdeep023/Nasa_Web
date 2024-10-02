@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/slices/userSlice";
 import HeaderHide from "./subComponents/HeaderHide";
@@ -14,6 +14,11 @@ const Header = () => {
 	const user = useSelector((store) => store.user);
 	const [headerhide, setHeaderHide] = useState(true);
 	const imgRef = useRef();
+
+	const path = useLocation();
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [path]);
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
