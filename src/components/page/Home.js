@@ -32,14 +32,15 @@ const Home = () => {
 						Planets
 					</Link>
 					<Link
-						to={"/space"}
+						to={"https://nasa-chatbot.streamlit.app/"}
+						target="_blank"
 						className="font-semibold text-lg hover:underline underline-offset-4"
 					>
-						Space
+						Chat Bot
 					</Link>
 				</div>
 				<div className="flex flex-col h-24 justify-between items-center mt-5 absolute bottom-1/3 left-1/2 -translate-x-1/2">
-					<button className="w-32 h-12 border border-gray-400 hover:border-gray-100 rounded-full">
+					<button className="px-5 h-12 border border-gray-400 hover:border-gray-100 rounded-full">
 						Explore Now
 					</button>
 					<GoArrowDown className="text-white text-3xl animate-bounce duration-75" />
@@ -50,7 +51,6 @@ const Home = () => {
 					<span>03</span>
 				</div>
 			</div>
-			{/* <CardGrid /> */}
 			{confirm && (
 				<div className="fixed top-0 backdrop-blur-sm p-2 w-full h-full flex items-center justify-center z-50">
 					<Confirm />
