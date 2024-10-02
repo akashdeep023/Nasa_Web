@@ -1,5 +1,3 @@
-import { FaceControls } from "@react-three/drei";
-
 export const planetsData = [
 	{
 		planet_name: "Proxima Centauri b",
