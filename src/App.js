@@ -26,7 +26,7 @@ function App() {
 	}, []);
 	return (
 		<Provider store={appStore}>
-			<div className="bg-color">
+			<div className="">
 				<ToastContainer
 					position="top-left"
 					autoClose={3000}
@@ -44,7 +44,7 @@ function App() {
 				/>
 				<BrowserRouter>
 					<Header />
-					<div className="text-white min-h-[calc(100vh-96px)]">
+					<div className="text-white min-h-[calc(100vh-97px)]">
 						<Suspense fallback={<Loading />}>
 							<Routes>
 								<Route path="/login" element={<Login />} />

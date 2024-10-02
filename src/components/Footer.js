@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
 	return (
-		<div className="border-t border-blue-950 bg-color">
+		<div className="bg-gradient-to-br to-gray-900 from-gray-950">
 			<div className=" w-full ps-10 sm:ps-[10%] py-10 sm:py-16 flex flex-col items-start justify-center gap-8 text-white">
 				<div>Question? Call 000-0000-0000</div>
 				<ul className="flex flex-wrap justify-start font-light underline decoration-from-font">

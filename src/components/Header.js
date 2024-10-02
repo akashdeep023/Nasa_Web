@@ -36,7 +36,7 @@ const Header = () => {
 	}, []);
 
 	return (
-		<div className="bg-color border-b border-blue-950 z-50 h-24 px-3 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl">
+		<div className="bg-gradient-to-br to-gray-900 from-gray-950 sticky top-0  z-50 h-24 px-3 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl">
 			<a
 				href="/"
 				className="text-white font-bold text-xl tracking-widest"
@@ -53,7 +53,7 @@ const Header = () => {
 					<BiSolidUser
 						ref={imgRef}
 						color="white"
-						className="ml-1 sm:h-9 sm:w-9 rounded-lg cursor-pointer contrast-200"
+						className="ml-1 h-7 w-7 sm:h-9 sm:w-9 rounded-lg cursor-pointer contrast-200"
 						onClick={() => setHeaderHide(!headerhide)}
 					/>
 					<div

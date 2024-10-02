@@ -52,7 +52,7 @@ const ForgotPass = () => {
 			});
 	};
 	return (
-		<div className="relative bg-black mx-auto max-h-80 w-[95%] max-w-[450px] sm:w-[80%] md:w-1/2 rounded-lg aspect-video border border-gray-400 flex justify-center items-center text-white">
+		<div className="relative bg-black/70 mx-auto max-h-80 w-[95%] max-w-[450px] sm:w-[80%] md:w-1/2 rounded-lg aspect-video border border-gray-400 flex justify-center items-center text-white">
 			<div className="flex flex-col gap-5 m-3 w-[90%] sm:w-[80%]">
 				<h4 className="text-lg sm:text-xl md:text-2xl font-bold my-2 mb-1 sm:mb-3 text-center">
 					Forgot Password?
