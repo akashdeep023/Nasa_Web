@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PrivateRoute from "./components/page/PrivateRoute";
 const PageNotFound = lazy(() => import("./components/PageNotFound"));
 const Planets = lazy(() => import("./components/page/Planets"));
 const Contact = lazy(() => import("./components/page/Contact"));
@@ -57,7 +58,14 @@ function App() {
 									path="/contact-us"
 									element={<Contact />}
 								/>
-								<Route path="/planets" element={<Planets />} />
+								<Route
+									path="/planets"
+									element={
+										<PrivateRoute>
+											<Planets />
+										</PrivateRoute>
+									}
+								/>
 								<Route path="*" element={<PageNotFound />} />
 							</Routes>
 						</Suspense>

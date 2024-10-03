@@ -122,7 +122,7 @@ const Login = () => {
 		<div className="bg-black/50">
 			<div className="min-h-[100vh] w-full h-full">
 				<img
-					className="relative w-full min-h-[100vh] object-cover object-left-top"
+					className="relative w-full h-[100vh] object-cover object-left-top"
 					src="/nasa-bg.jpg"
 					alt="bgImg"
 				/>
