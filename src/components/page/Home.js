@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import Confirm from "../subComponents/Confirm";
-// import CardGrid from "../CardGrid";
 import { GoArrowDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 
@@ -61,4 +60,3 @@ const Home = () => {
 };
 
 export default Home;
-// px-5 sm:px-8 md:px-11 py-6 sm:py-8
