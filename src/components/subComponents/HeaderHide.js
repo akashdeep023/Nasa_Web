@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setConfirm } from "../../utils/slices/configSlice";
 import { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
+import { AiOutlineLogout } from "react-icons/ai";
+import { TbUserX } from "react-icons/tb";
 const HeaderHide = ({ setHeaderHide, imgRef }) => {
 	// const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -55,23 +57,25 @@ const HeaderHide = ({ setHeaderHide, imgRef }) => {
 		<>
 			<div
 				ref={menuRef}
-				className="absolute right-0 top-8 sm:top-10 bg-white text-black border border-gray-300/20 p-8 rounded-lg w-44 flex flex-col gap-1 items-start z-[1000]"
+				className="absolute right-0 top-8 sm:top-10 bg-black/80 text-white border border-gray-300/30 p-8 rounded-lg w-48 flex flex-col gap-2 items-start z-[1000]"
 			>
-				<span className="w-28 text-center border-b border-black font-bold mb-1">
-					<span className="">Hello</span>{" "}
-					{user?.displayName?.split(" ")[0]}
+				<span className="w-full text-center border-b border-white mb-1 line-clamp-1">
+					<span className="font-bold">Hi!</span>{" "}
+					<span className="">{user?.displayName?.split(" ")[0]}</span>
 				</span>
 				<button
-					className="w-full hover:bg-gray-400 p-1.5"
+					className="w-full hover:bg-gray-400 hover:text-black rounded-3xl border-b p-2 ps-4 flex gap-2 items-center"
 					onClick={handleSignOut}
 				>
-					Logout
+					<AiOutlineLogout />
+					<span>Logout</span>
 				</button>
 				<button
-					className="w-full hover:bg-gray-400 p-1.5"
+					className="w-full hover:bg-gray-400 hover:text-black rounded-3xl border-b p-2 ps-4 flex gap-2 items-center"
 					onClick={handleDeleteAc}
 				>
-					Delete Ac.
+					<TbUserX size={18} />
+					<span>Delete AC</span>
 				</button>
 			</div>
 		</>

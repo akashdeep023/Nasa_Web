@@ -5,8 +5,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/slices/userSlice";
 import HeaderHide from "./subComponents/HeaderHide";
-import { BiSolidUser } from "react-icons/bi";
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md";
+import { FaUserAstronaut } from "react-icons/fa6";
+import { AiOutlineHome, AiOutlineLogin } from "react-icons/ai";
+import { BiHome, BiHomeSmile, BiSolidHomeSmile } from "react-icons/bi";
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -31,54 +33,71 @@ const Header = () => {
 						displayName: displayName,
 					})
 				);
-				navigate("/");
+				if (path.pathname === "/login") {
+					navigate("/");
+				}
 			} else {
 				dispatch(removeUser());
-				navigate("/login");
+				if (path.pathname === "/planet") {
+					navigate("/login");
+				}
 			}
 		});
 		return () => unsubscribe();
-	}, []);
+	}, [path, navigate, dispatch]);
 
 	return (
-		<div className="bg-gradient-to-br to-gray-900 from-gray-950 sticky top-0  z-50 h-24 px-3 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl">
-			<a
-				href="/"
+		<div className="bg-gradient-to-br to-gray-900 from-gray-950 sticky top-0  z-50 h-24 px-5 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl">
+			<Link
+				to="/"
 				className="text-white font-bold text-xl tracking-widest"
 			>
 				NASA
-			</a>
-			{user ? (
-				<div className="relative flex place-items-center justify-center">
-					{headerhide ? (
-						<MdOutlineArrowDropUp className="text-lg mt-1 opacity-50 text-white" />
-					) : (
-						<MdOutlineArrowDropDown className="text-lg mt-1 opacity-50 text-white" />
-					)}
-					<BiSolidUser
-						ref={imgRef}
-						color="white"
-						className="ml-1 h-7 w-7 sm:h-9 sm:w-9 rounded-lg cursor-pointer contrast-200"
-						onClick={() => setHeaderHide(!headerhide)}
-					/>
-					<div
-						className={
-							headerhide
-								? "invisible opacity-0 scale-50 transition-all"
-								: "inline-block opacity-100 scale-100 transition-all"
-						}
-					>
-						<HeaderHide
-							setHeaderHide={setHeaderHide}
-							imgRef={imgRef}
-						/>
-					</div>
-				</div>
-			) : (
-				<Link to={"/login"} className="text-white">
-					Sign In
+			</Link>
+
+			<div className="text-white flex justify-between items-center gap-4 sm:gap-8">
+				<Link to={"/"} className="hover:scale-110 transition-all">
+					<AiOutlineHome size={22} />
 				</Link>
-			)}
+				{user ? (
+					<div className="relative flex place-items-center justify-center">
+						{headerhide ? (
+							<MdOutlineArrowDropUp className="text-lg mt-1 opacity-50 text-white" />
+						) : (
+							<MdOutlineArrowDropDown className="text-lg mt-1 opacity-50 text-white" />
+						)}
+						<FaUserAstronaut
+							ref={imgRef}
+							color="white"
+							className="ml-1 h-7 w-7 sm:h-8 sm:w-8 rounded-lg cursor-pointer contrast-200"
+							onClick={() => setHeaderHide(!headerhide)}
+						/>
+						<div
+							className={
+								headerhide
+									? "invisible opacity-0 scale-50 transition-all"
+									: "inline-block opacity-100 scale-100 transition-all"
+							}
+						>
+							<HeaderHide
+								setHeaderHide={setHeaderHide}
+								imgRef={imgRef}
+							/>
+						</div>
+					</div>
+				) : (
+					<Link
+						to={"/login"}
+						className="group px-5 h-11 border border-gray-400 text-white hover:border-gray-100 rounded-full flex justify-center gap-2 items-center"
+					>
+						<AiOutlineLogin
+							size={18}
+							className="group-hover:translate-x-1 transition-all"
+						/>
+						<span>SignIn</span>
+					</Link>
+				)}
+			</div>
 		</div>
 	);
 };

@@ -17,6 +17,22 @@ const Footer = () => {
 					</span>
 					<div className="px-10 sm:px-[10%] flex flex-wrap justify-center sm:justify-between font-light underline decoration-from-font w-full">
 						<Link
+							to={"/"}
+							className="w-36 text-sm sm:w-56 sm:h-12 h-8 flex items-center md:justify-start justify-center"
+						>
+							<span className="cursor-pointer hover:text-gray-400">
+								Home
+							</span>
+						</Link>
+						<Link
+							to={"/login"}
+							className="w-36 text-sm sm:w-56 sm:h-12 h-8 flex items-center md:justify-start justify-center"
+						>
+							<span className="cursor-pointer hover:text-gray-400">
+								Sign In
+							</span>
+						</Link>
+						<Link
 							to={"/about-us"}
 							className="w-36 text-sm sm:w-56 sm:h-12 h-8 flex items-center md:justify-start justify-center"
 						>
