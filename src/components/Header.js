@@ -16,6 +16,22 @@ const Header = () => {
 	const user = useSelector((store) => store.user);
 	const [headerhide, setHeaderHide] = useState(true);
 	const imgRef = useRef();
+	const [head, setHead] = useState(true);
+	let lastScrollTop = 0;
+	useEffect(() => {
+		const handle = () => {
+			let scrollTop =
+				window.pageYOffset || document.documentElement.scrollTop;
+			if (scrollTop > lastScrollTop) {
+				setHead(false);
+			} else {
+				setHead(true);
+			}
+			lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+		};
+		window.addEventListener("scroll", handle);
+		return () => window.removeEventListener("scroll", handle);
+	}, []);
 
 	const path = useLocation();
 	useEffect(() => {
@@ -47,7 +63,11 @@ const Header = () => {
 	}, [path, navigate, dispatch]);
 
 	return (
-		<div className="bg-gradient-to-br to-gray-900 from-gray-950 sticky top-0  z-50 h-24 px-5 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl">
+		<div
+			className={`bg-gradient-to-br to-gray-900 from-gray-950 transition-all duration-500 sticky z-50 h-24 px-5 sm:px-[10%] filter flex justify-between items-center w-full backdrop-blur-3xl ${
+				head ? "top-0 " : "-top-full"
+			}`}
+		>
 			<Link
 				to="/"
 				className="text-white font-bold text-xl tracking-widest"

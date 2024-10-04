@@ -57,6 +57,27 @@ const Home = () => {
 				</div>
 			)}
 			<AnimationBox />
+			<div className="text-white flex flex-col gap-6 justify-center items-center z-10 relative py-4 sm:py-5 md:py-6 px-3 sm:px-9 md:px-12 w-full">
+				<div className="rounded-2xl border border-white/20 h-[calc(60vh)] md:h-[calc(90vh)] w-full relative overflow-hidden">
+					<img
+						className="w-full h-full object-center object-cover mix-blend-luminosity"
+						src="https://science.nasa.gov/wp-content/uploads/2023/04/heic1916a-jpg.webp?w=320&format=png"
+					/>
+					<div className="absolute left-0 p-4 sm:p-8 md:p-12 top-1/2 -translate-y-1/2">
+						<h2 className="font-bold text-3xl sm:text-4xl mb-4 md:text-5xl">
+							Exoplanets
+						</h2>
+						<p className="md:w-1/2 sm:w-3/4 w-full font-semibold text-gray-300">
+							An exoplanet is any planet beyond our solar system.
+							Most of them orbit other stars, but some
+							free-floating exoplanets, called rogue planets, are
+							untethered to any star. We’ve confirmed more than
+							5,600 exoplanets out of the billions that we believe
+							exist.
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

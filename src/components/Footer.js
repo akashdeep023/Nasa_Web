@@ -11,11 +11,11 @@ const Footer = () => {
 	return (
 		<div className="bg-gradient-to-br to-gray-900 from-gray-950">
 			<div className="w-full px-2  flex flex-col items-start justify-center gap-8 text-white">
-				<div className="mt-6 py-4 w-full flex flex-col sm:flex-row justify-between items-center px-10 sm:px-[10%]">
+				<div className="mt-6 py-4 w-full flex flex-col sm:flex-row justify-between items-center px-0 sm:px-[10%]">
 					<span className="text-white font-bold text-xl tracking-widest mb-4 sm:mb-0 sm:w-1/4">
 						<img src="/nasa-logo.svg" className="h-14" />
 					</span>
-					<div className="px-10 sm:px-[10%] flex flex-wrap justify-center sm:justify-between font-light underline decoration-from-font w-full">
+					<div className="flex flex-wrap justify-center sm:justify-start font-light underline decoration-from-font w-full">
 						<Link
 							to={"/"}
 							className="w-36 text-sm sm:w-56 sm:h-12 h-8 flex items-center md:justify-start justify-center"
