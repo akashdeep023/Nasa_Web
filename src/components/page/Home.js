@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import Confirm from "../subComponents/Confirm";
 import { GoArrowDown } from "react-icons/go";
 import { Link } from "react-router-dom";
+import AnimationBox from "../AnimationBox";
 
 const Home = () => {
 	const confirm = useSelector((store) => store.config?.confirm);
@@ -55,6 +56,7 @@ const Home = () => {
 					<Confirm />
 				</div>
 			)}
+			<AnimationBox />
 		</div>
 	);
 };

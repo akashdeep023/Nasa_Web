@@ -9,3 +9,18 @@ body::-webkit-scrollbar-thumb {
 	width: 5px;
 	background: #0a101d;
 }
+
+.right-to-left {
+	animation: left-to-right 20s infinite linear reverse;
+}
+.left-to-right {
+	animation: left-to-right 20s infinite linear;
+}
+@keyframes left-to-right {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
